@@ -13,7 +13,6 @@ body {
 }
 
 nav {
-    /* border: 1px solid; */
     display: flex;
     justify-content: space-around;
 }
@@ -21,15 +20,7 @@ nav {
 .links {
     text-decoration: none;
     color: black;
-    border-bottom: 1px solid red;
-}
-
-cite {
-    height: 90%;
-    font-size: 2em;
-    font-weight: 600;
-    display: grid;
-    place-items: center;
+    border-bottom: 2px solid red;
 }
 
 .form {
@@ -75,18 +66,24 @@ cite {
 }
 
 .signUp {
-    /* border: 1px solid blue; */
     height: 90%;
     margin: 1.5em 5em;
 }
 
 .login {
-    /* border: 1px solid green; */
     margin: 2em 5em;
 }
 
 .header {
     text-align: center;
+}
+
+.errMsg{
+    width: 12em;
+    position: absolute;
+    right: 20em;
+    color: red;
+    font-style: oblique;
 }
 
 .signUpBtn,

@@ -34,19 +34,17 @@ export default function Login() {
         }
       }
       const handleChange = (e) => {
-        if (e.target.mail)
+        if (e.target.name === "mail")
           setMail(e.target.value)
-        else if (e.target.pass)
+        else if (e.target.name === "pass")
           setPass(e.target.value)
-        // else
-        //   alert("Wrong input")
+        else
+          alert("Wrong input")
       }
       const clearInput = () => {
         mailRef.current.value = ""
         passRef.current.value = ""
       }
-
-
     return (
         <>
             <form className='login'>
@@ -60,7 +58,7 @@ export default function Login() {
                     <input type="password" name='pass' ref={passRef} onChange={handleChange} required />    <br />
                     <label>Password</label>    <br /><br />
                 </div>
-
+                {err.type ? <p className='errMsg'>{err.value}</p> : null}
                 <label>Forgot your password?</label>   <br />
                 <button className='loginBtn' onClick={handleSubmit}>LOGIN</button>
             </form>

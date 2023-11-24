@@ -38,8 +38,8 @@ export default function SignUp() {
         "pass": pass,
         "ph": ph
       }
-      axios.post("https://handson4backend-dxua.onrender.com", tempObj)
-      .then((response) => {
+      axios.post("https://handson4backend-dxua.onrender.com/register", tempObj)
+        .then((response) => {
           setErr({ type: true, value: `${response.data.msg}` })
           if (response.data.token)
             localStorage.setItem("Token", response.data.token)
@@ -48,16 +48,16 @@ export default function SignUp() {
     }
   }
   const handleChange = (e) => {
-    if (e.target.name)
+    if (e.target.name === "name")
       setName(e.target.value)
-    else if (e.target.mail)
+    else if (e.target.name === "mail")
       setMail(e.target.value)
-    else if (e.target.pass)
+    else if (e.target.name === "pass")
       setPass(e.target.value)
-    else if (e.target.ph)
+    else if (e.target.name === "ph")
       setPh(e.target.value)
-    // else
-    //   alert("Wrong input")
+    else
+      alert("Wrong input")
   }
   const clearInput = () => {
     nameRef.current.value = ""
@@ -69,7 +69,6 @@ export default function SignUp() {
 
   return (
     <>
-      {err.type ? <p>{err.value}</p> : null}
       <form className='signUp'>
         <h2 className='header'>Create your new Account</h2> <br />
 
@@ -92,7 +91,7 @@ export default function SignUp() {
           <input type="number" name='ph' onChange={handleChange} ref={phRef} required />  <br />
           <label>Phone No.</label>  <br />
         </div>
-
+        {err.type ? <p className='errMsg'>{err.value}</p> : null}
         <button className='signUpBtn' onClick={handleSubmit} >SIGN UP</button>
       </form>
     </>
