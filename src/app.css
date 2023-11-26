@@ -28,7 +28,7 @@ nav {
     border-radius: 15px;
     background: white;
     width: 50%;
-    height: 60%;
+    height: 390px;
     margin: 5em auto;
     padding: 10px 0 0 0;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -81,7 +81,8 @@ nav {
 .errMsg{
     width: 12em;
     position: absolute;
-    right: 20em;
+    /* bottom: 31vh; */
+    left: 60vw;
     color: red;
     font-style: oblique;
 }

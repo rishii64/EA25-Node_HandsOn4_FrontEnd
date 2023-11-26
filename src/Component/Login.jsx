@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react'
+import { createRef, useState } from 'react'
 import axios from 'axios'
 
 export default function Login() {
@@ -24,7 +24,7 @@ export default function Login() {
             "mail": mail,
             "pass": pass
           }
-          axios.post("https://handson4backend-dxua.onrender.com", tempObj)
+          axios.post("https://handson4backend-dxua.onrender.com/login", tempObj)
           .then((response) => {
               setErr({ type: true, value: `${response.data.msg}` })
               if (response.data.token)
@@ -58,8 +58,8 @@ export default function Login() {
                     <input type="password" name='pass' ref={passRef} onChange={handleChange} required />    <br />
                     <label>Password</label>    <br /><br />
                 </div>
-                {err.type ? <p className='errMsg'>{err.value}</p> : null}
-                <label>Forgot your password?</label>   <br />
+                {err.type ? <p className='errMsg'>{err.value}</p> : null} <br />
+                {/* <label>Forgot your password?</label>   <br /> */}
                 <button className='loginBtn' onClick={handleSubmit}>LOGIN</button>
             </form>
         </>

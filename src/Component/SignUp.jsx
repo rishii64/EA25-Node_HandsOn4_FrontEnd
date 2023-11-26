@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react'
+import { createRef, useState } from 'react'
 import axios from 'axios'
 
 export default function SignUp() {
